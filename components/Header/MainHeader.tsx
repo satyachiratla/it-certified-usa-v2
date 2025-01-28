@@ -1,103 +1,123 @@
+"use client";
+
 import { Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
 import { AcmeLogo } from "./AcmeLogo";
 import NavLink from "./NavLink";
-import DropDown from "./DropDown";
 import Link from "next/link";
 
 export default function App() {
   return (
     <Navbar className="bg-slate-400">
-      <Link href="/">
+      <NavLink href="/" className="mt-2">
         <NavbarBrand>
           <AcmeLogo />
           <p className="font-bold text-inherit">IT Certified USA</p>
         </NavbarBrand>
-      </Link>
+      </NavLink>
       <NavbarContent className="hidden sm:flex gap-8" justify="center">
         <NavLink href="/">Home</NavLink>
-        <DropDown
-          href="about-us"
-          label="About Us"
-          items={[
-            {
-              key: "company-overview",
-              label: "Company Overview",
-              link: "company-overview",
-            },
-            {
-              key: "vision-and-mission",
-              label: "Vision and Mission",
-              link: "vision-and-mission",
-            },
-            {
-              key: "why-it-certified-usa",
-              label: "Why It Certified USA",
-              link: "why-it-certified-usa",
-            },
-          ]}
-        />
-        <DropDown
-          label="Services"
-          href="services"
-          items={[
-            {
-              key: "application-development",
-              label: "Application Development",
-              link: "application-development",
-            },
-            {
-              key: "maintenance-support",
-              label: "Maintenance Support",
-              link: "maintenance-support",
-            },
-            { key: "consulting", label: "Consulting", link: "consulting" },
-            {
-              key: "quality-testing",
-              label: "Quality/Testing",
-              link: "quality-testing",
-            },
-            { key: "staffing", label: "Staffing", link: "staffing" },
-            { key: "technology", label: "Technology", link: "technology" },
-            {
-              key: "real-estate",
-              label: "Real Estate",
-              link: "real-estate-development-and-forecloser",
-            },
-            {
-              key: "angel-investing",
-              label: "Angel Investing",
-              link: "angel-investing-holding-and-parenting-company",
-            },
-          ]}
-        />
+        <div className="dropdown dropdown-hover">
+          <NavLink href="/about-us" tabIndex={0} role="button" className="m-1">
+            About Us
+          </NavLink>
+          <ul
+            tabIndex={0}
+            className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow -left-16"
+          >
+            <li>
+              <Link href="/company-overview">Company Overview</Link>
+            </li>
+            <li>
+              <Link href="/vision-and-mission">Vision and Mission</Link>
+            </li>
+            <li>
+              <Link href="/why-it-certified-usa">Why It Certified USA</Link>
+            </li>
+          </ul>
+        </div>
+
+        <div className="dropdown dropdown-hover">
+          <NavLink href="/services" tabIndex={0} role="button" className="m-1">
+            Services
+          </NavLink>
+          <ul
+            tabIndex={0}
+            className="dropdown-content menu bg-base-100 rounded-box z-[1] w-56 p-2 shadow -left-16"
+          >
+            <li>
+              <Link href="/application-development">
+                Application Development
+              </Link>
+            </li>
+            <li>
+              <Link href="/maintenance-support">Maintenance Support</Link>
+            </li>
+            <li>
+              <Link href="/consulting">Consulting</Link>
+            </li>
+            <li>
+              <Link href="/quality-testing">Quality/Testing</Link>
+            </li>
+            <li>
+              <Link href="/staffing">Staffing</Link>
+            </li>
+            <li>
+              <Link href="/technology">Technology</Link>
+            </li>
+            <li>
+              <Link href="/real-estate-development-and-forecloser">
+                Real Estate
+              </Link>
+            </li>
+            <li>
+              <Link href="/angel-investing-holding-and-parenting-company">
+                Angel Investing
+              </Link>
+            </li>
+          </ul>
+        </div>
+
         <NavLink color="foreground" href="/industries">
           Industries
         </NavLink>
-        <DropDown
-          label="Products"
-          href="products"
-          items={[
-            { key: "overview", label: "Overview", link: "products" },
-            {
-              key: "our-methodology",
-              label: "Our Methodology",
-              link: "our-methodology",
-            },
-          ]}
-        />
-        <DropDown
-          label="Career"
-          href="career"
-          items={[
-            {
-              key: "work-culture",
-              label: "Work Culture",
-              link: "work-culture",
-            },
-            { key: "benefits", label: "Benefits", link: "benefits" },
-            { key: "openings", label: "Openings", link: "openings" },
-          ]}
-        />
+
+        <div className="dropdown dropdown-hover">
+          <NavLink href="/products" tabIndex={0} role="button" className="m-1">
+            Products
+          </NavLink>
+          <ul
+            tabIndex={0}
+            className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow -left-16"
+          >
+            <li>
+              <Link href="/products">Overview</Link>
+            </li>
+            <li>
+              <Link href="/our-methodology">Our Methodology</Link>
+            </li>
+          </ul>
+        </div>
+
+        <div className="dropdown dropdown-hover">
+          <NavLink href="/career" tabIndex={0} role="button" className="m-1">
+            Career
+          </NavLink>
+          <ul
+            tabIndex={0}
+            className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow -left-16"
+          >
+            <li>
+              <Link href="/work-culture">Work Culture</Link>
+            </li>
+            <li>
+              <Link href="/benefits">Benefits</Link>
+            </li>
+            <li>
+              <Link href="/openings">Openings</Link>
+            </li>
+          </ul>
+        </div>
+
         <NavLink color="foreground" href="/clients">
           Clients
         </NavLink>

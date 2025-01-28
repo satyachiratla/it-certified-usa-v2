@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 type Service = {
-  image: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  image: any;
   title: string;
   description: string;
 };

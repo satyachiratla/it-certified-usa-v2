@@ -3,7 +3,7 @@ import { MissionIcon, VisionIcon } from "@/constants/images";
 
 export default function Goal() {
   return (
-    <section className="flex justify-center items-center text-center gap-5 py-8">
+    <section className="flex flex-col md:flex-row justify-center items-center text-center gap-5 py-8">
       <div className="max-w-md flex flex-col justify-center items-center gap-3">
         <div className="w-44 h-44">
           <Image src={VisionIcon} alt="vision" width={500} height={500} />

@@ -57,7 +57,7 @@ export default function RealEstateDevelopmentAndForeclosure() {
       </div>
       <div className="w-1/3 space-y-5">
         <MoreInformation />
-        <EnquiryForm />
+        <EnquiryForm heading="Get In Touch" />
       </div>
     </section>
   );

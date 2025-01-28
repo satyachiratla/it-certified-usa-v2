@@ -12,7 +12,7 @@ export default function Services() {
         a fast growing software consulting company offering software development
         solutions to all our clients through offshore and onsite services.
       </p>
-      <ul className="grid grid-cols-4 gap-5 place-content-center">
+      <ul className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-4 gap-5 place-content-center">
         {ServicesData.map((service) => (
           <li key={service.id}>
             <ServiceCard
